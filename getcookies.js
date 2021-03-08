@@ -1,10 +1,10 @@
 //Pega os cookies e retorna na forma de objetos JSON
 function getCookies(){
-    var c = document.cookie
-    if(c == '' || typeof c === 'undefined'){
+    var cookies = document.cookie
+    if(cookies == '' || typeof cookies === 'undefined'){
         return {'allCookies':''}
     }
-    var jasonCookies = c.split('; ')
+    var jasonCookies = cookies.split('; ')
     var jasonCookies2 = '{'
     for(var i in jasonCookies){
         var j = jasonCookies[i].split("=")
@@ -12,7 +12,7 @@ function getCookies(){
     }
     jasonCookies = jasonCookies2.slice(0, jasonCookies2.length - 1) + '}'
     jasonCookies = JSON.parse(jasonCookies)
-    jasonCookies.allCookies = c
+    jasonCookies.allCookies = cookies
 
     return jasonCookies
 }
