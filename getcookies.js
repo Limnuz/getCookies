@@ -1,5 +1,5 @@
 //Pega os cookies e retorna na forma de objetos JSON
-function cookies(){
+function getCookies(){
     var c = document.cookie
     if(c == '' || typeof c === 'undefined'){
         return {'allCookies':''}
